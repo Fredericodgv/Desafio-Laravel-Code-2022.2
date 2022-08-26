@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     
 });
 
+//Products
+Route::get('/produtos', [ProductController::class, 'index'])->name('produtos.index');
+Route::get('/produtos/create', [ProductController::class, 'create'])->name('produtos.create');
+Route::get('/produtos/{product}/edit', [ProductController::class, 'edit'])->name('produtos.edit');
+Route::get('/produtos/{product}', [ProductController::class, 'show'])->name('produtos.show');
+Route::post('/produtos', [ProductController::class, 'store'])->name('produtos.store');
+Route::put('/produtos/{product}', [ProductController::class, 'update'])->name('produtos.update');
+Route::delete('/produtos/{product}', [ProductController::class, 'destroy'])->name('produtos.destroy');
 
-Route::get('/dale', function() {
-    return view('dale');
-});
 
 require __DIR__.'/auth.php';
