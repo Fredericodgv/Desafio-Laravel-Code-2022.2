@@ -25,10 +25,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })/*->middleware(['auth'])*/->name('dashboard');
-    
-});
 
-//Products
+
+    //Products
 Route::get('/produtos', [ProductController::class, 'index'])->name('products.index');
 Route::get('/produtos/create', [ProductController::class, 'create'])->name('products.create');
 Route::get('/produtos/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
@@ -36,6 +35,10 @@ Route::get('/produtos/{product}', [ProductController::class, 'show'])->name('pro
 Route::post('/produtos', [ProductController::class, 'store'])->name('products.store');
 Route::put('/produtos/{product}', [ProductController::class, 'update'])->name('products.update');
 Route::delete('/produtos/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+
+    
+});
+
 
 
 require __DIR__.'/auth.php';
