@@ -25,27 +25,6 @@
                                     step="any" class="form-control" required
                                     value="{{ old('price', $product->price) }}">
                             </div>
-                            <div class="form-group col-sm-12 col-md-4">
-                                <label class="d-flex justify-content-start" for="text" class="required">Descrição
-                                </label>
-                                <input {{ $enable }} type="text" name="description" id="description"
-                                    class="form-control" required
-                                    value="{{ old('description', $product->description) }}">
-                            </div>
-                            @if ($enable == '')
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <label class="d-flex justify-content-start" for="photo" class="required">Foto
-                                    </label>
-                                    <input {{ $enable }} type="file" accept="image/*" name="photo"
-                                        id="photo" class="form-control" required
-                                        value="{{ old('photo', $product->photo) }}">
-                                </div>
-                            @else
-                                <div class="form-group col-sm-12 col-md-4">
-                                    <img src="<?= $product->photo ?>" class="d-block w-100 imagem-teste"
-                                        alt="Imagem do produto">
-                                </div>
-                            @endif
                         </center>
                     </form>
 
@@ -57,10 +36,10 @@
                         </div>
                     @else
                         <div class="mt-4 d-flex justify-content-center">
-                            <a href="{{ route('products.index') }}" class="btn ">
+                            <a href="{{ route('inventory.index') }}" class="btn ">
                                 Voltar
                             </a>
-                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary">
+                            <a href="{{ route('inventory.edit', $product->id) }}" class="btn btn-primary">
                                 Editar
                             </a>
                         </div>

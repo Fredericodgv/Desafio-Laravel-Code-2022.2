@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\InventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,15 @@ Route::get('/produtos/{product}', [ProductController::class, 'show'])->name('pro
 Route::post('/produtos', [ProductController::class, 'store'])->name('products.store');
 Route::put('/produtos/{product}', [ProductController::class, 'update'])->name('products.update');
 Route::delete('/produtos/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+
+    //Inventory
+Route::get('/estoque', [InventoryController::class, 'index'])->name('inventory.index');
+Route::get('/estoque/create', [InventoryController::class, 'create'])->name('inventory.create');
+Route::get('/estoque/{product}/edit', [InventoryController::class, 'edit'])->name('inventory.edit');
+Route::get('/estoque/{product}', [InventoryController::class, 'show'])->name('inventory.show');
+Route::post('/estoque', [InventoryController::class, 'store'])->name('inventory.store');
+Route::put('/estoque/{product}', [InventoryController::class, 'update'])->name('inventory.update');
+Route::delete('/estoque/{product}', [InventoryController::class, 'destroy'])->name('inventory.destroy');
 
     
 });
