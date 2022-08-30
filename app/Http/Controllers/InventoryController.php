@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Inventory;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class InventoryController extends Controller
@@ -27,8 +29,9 @@ class InventoryController extends Controller
     public function create()
     {
         $inventory = new Inventory();
+        $products = Product::all();
 
-        return view('inventory.create', compact('inventory'));
+        return view('inventory.create', compact('inventory', 'products'));
     }
 
     /**
@@ -54,7 +57,10 @@ class InventoryController extends Controller
      */
     public function show(Inventory $inventory)
     {
-        return view('inventory.show', compact('inventory'));
+        $inventory = Inventory::find($inventory->id);
+        $product = Product::find($inventory->product_id);
+
+        return view('inventory.show', compact('inventory', 'product'));	
     }
 
     /**
@@ -65,7 +71,9 @@ class InventoryController extends Controller
      */
     public function edit(Inventory $inventory)
     {
-        return view('inventory.edit', compact('inventory'));
+        $products = Product::all();
+
+        return view('inventory.edit', compact('inventory', 'products'));
     }
 
     /**

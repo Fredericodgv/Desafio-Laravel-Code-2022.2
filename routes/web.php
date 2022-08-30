@@ -40,11 +40,11 @@ Route::delete('/produtos/{product}', [ProductController::class, 'destroy'])->nam
     //Inventory
 Route::get('/estoque', [InventoryController::class, 'index'])->name('inventory.index');
 Route::get('/estoque/create', [InventoryController::class, 'create'])->name('inventory.create');
-Route::get('/estoque/{product}/edit', [InventoryController::class, 'edit'])->name('inventory.edit');
-Route::get('/estoque/{product}', [InventoryController::class, 'show'])->name('inventory.show');
+Route::get('/estoque/{inventory}/edit', [InventoryController::class, 'edit'])->name('inventory.edit');
+Route::get('/estoque/{inventory}', [InventoryController::class, 'show'])->name('inventory.show');
 Route::post('/estoque', [InventoryController::class, 'store'])->name('inventory.store');
-Route::put('/estoque/{product}', [InventoryController::class, 'update'])->name('inventory.update');
-Route::delete('/estoque/{product}', [InventoryController::class, 'destroy'])->name('inventory.destroy');
+Route::put('/estoque/{inventory}', [InventoryController::class, 'update'])->name('inventory.update');
+Route::delete('/estoque/{inventory}', [InventoryController::class, 'destroy'])->name('inventory.destroy');
 
     
 });

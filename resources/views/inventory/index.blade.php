@@ -29,15 +29,15 @@
                                         <td>{{ $inventory->product->name }}</td>
                                         <td>{{ $inventory->quantity }}</td>
                                         <td class="options d-flex justify-content-center gap-1">
-                                            <a href="{{ route('inventory.show', $invetory->id) }}" class="btn btn-dark">
+                                            <a href="{{ route('inventory.show', $inventory->id) }}" class="btn btn-dark">
                                                 <i class="fas fa-search"></i>
                                             </a>
 
-                                            <a href="{{ route('inventory.edit', $invetory->id) }}"
+                                            <a href="{{ route('inventory.edit', $inventory->id) }}"
                                                 class="btn btn-primary"><i class="fas fa-pen"></i></a>
 
                                             <form class="form-delete d-inline-block"
-                                                action="{{ route('inventory.destroy', $invetory->id) }}" method="post">
+                                                action="{{ route('inventory.destroy', $inventory->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-danger"><i
