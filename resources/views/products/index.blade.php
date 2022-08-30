@@ -30,7 +30,7 @@
                                 @foreach ($products as $product)
                                     <tr>
                                         <td>{{ $product->name }}</td>
-                                        <td>{{ $product->price }}</td>
+                                        <td>{{ 'R$ '.number_format($product->price, 2, ',', '.') }}</td>
                                         <td class="options d-flex justify-content-center gap-1">
                                             <a href="{{ route('products.show', $product->id) }}" class="btn btn-dark">
                                                 <i class="fas fa-search"></i>

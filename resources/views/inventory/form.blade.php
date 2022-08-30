@@ -31,7 +31,7 @@
                             <div class="form-group col-sm-12 col-md-4">
                                 <label class="d-flex justify-content-start" for="price" class="required">Data
                                 </label>
-                                <input {{ $enable }} type="number" min="1" name="date" id="date"
+                                <input {{ $enable }} type="date" min="1" name="date" id="date"
                                     step="any" class="form-control" required
                                     value="{{ old('price', $inventory->date) }}">
                             </div>

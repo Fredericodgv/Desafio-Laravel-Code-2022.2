@@ -23,7 +23,7 @@
                                 </label>
                                 <input {{ $enable }} type="number" min="1" name="price" id="price"
                                     step="any" class="form-control" required
-                                    value="{{ old('price', $product->price) }}">
+                                    value="{{ old('price', 'R$ '.number_format($product->price, 2, ',', '.')) }}">
                             </div>
                             <div class="form-group col-sm-12 col-md-4">
                                 <label class="d-flex justify-content-start" for="text" class="required">Descrição
