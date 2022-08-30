@@ -8,22 +8,22 @@
                         @method($method ?? 'get')
                         <center>
                             <div class="form-group col-sm-12 col-md-4">
-                                <label class="d-flex justify-content-start" for="name" class="required">Nome </label>
-                                <input {{ $enable }} type="text" name="name" id="name" autofocus
-                                    class="form-control" required value="{{ old('name', $product->name) }}">
+                                <label class="d-flex justify-content-start" for="name" class="required">Produto </label>
+                                <input {{ $enable }} type="text" name="product" id="product" autofocus
+                                    class="form-control" required value="{{ old('product', $inventory->?) }}">
                             </div>
                             <div class="form-group col-sm-12 col-md-4">
-                                <label class="d-flex justify-content-start" for="email" class="required">Sabor
+                                <label class="d-flex justify-content-start" for="email" class="required">Quantidade
                                 </label>
-                                <input {{ $enable }} type="text" name="flavor" id="flavor"
-                                    class="form-control" required value="{{ old('flavor', $product->flavor) }}">
+                                <input {{ $enable }} type="text" name="quantity" id="quantity"
+                                    class="form-control" required value="{{ old('quantity', $inventory->quantity) }}">
                             </div>
                             <div class="form-group col-sm-12 col-md-4">
-                                <label class="d-flex justify-content-start" for="price" class="required">Preco
+                                <label class="d-flex justify-content-start" for="price" class="required">Data
                                 </label>
-                                <input {{ $enable }} type="number" min="1" name="price" id="price"
+                                <input {{ $enable }} type="number" min="1" name="date" id="date"
                                     step="any" class="form-control" required
-                                    value="{{ old('price', $product->price) }}">
+                                    value="{{ old('price', $inventory->date) }}">
                             </div>
                         </center>
                     </form>

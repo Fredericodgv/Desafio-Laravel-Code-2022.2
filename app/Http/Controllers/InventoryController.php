@@ -92,6 +92,8 @@ class InventoryController extends Controller
      */
     public function destroy(Inventory $inventory)
     {
-        //
+        $inventory->delete();
+        
+        return redirect()->route('inventory.index')->with('success', 'Estoque excluído com sucesso!');
     }
 }

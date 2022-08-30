@@ -10,8 +10,13 @@ class Inventory extends Model
     use HasFactory;
 
     protected $fillable = [
-        'product',
+        'product_id',
         'quantity',
         'date',
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
