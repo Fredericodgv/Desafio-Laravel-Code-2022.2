@@ -3,7 +3,7 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
                 <div class="row">
-                    <form method="post" action="{{ $action ?? '/' }}" id="form-adicionar">
+                    <form method="post" action="{{ $action ?? '/' }}" id="form-adicionar" >
                         @csrf
                         @method($method ?? 'get')
                         <center>
@@ -37,7 +37,7 @@
                                     <label class="d-flex justify-content-start" for="photo" class="required">Foto
                                     </label>
                                     <input {{ $enable }} type="file" accept="image/*" name="photo"
-                                        id="photo" class="form-control" required
+                                        id="photo" class="form-control"
                                         value="{{ old('photo', $product->photo) }}">
                                 </div>
                             @else
