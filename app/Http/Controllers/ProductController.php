@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Storage;
 
 class ProductController extends Controller
 {
@@ -39,9 +40,9 @@ class ProductController extends Controller
     {
         $data = $request->all();
   
-        $request->photo = $request->file('photo')->store('images');
+        // $request->photo = $request->file('photo')->store('images');
 
-        $data['photo'] = $request->photo;
+        // $data['photo'] = $request->photo;
 
         Product::create($data);
 
@@ -79,23 +80,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $request->validate([
-            'name' => 'required',
-            'flavor' => 'required',
-            'price' => 'required',
-            'description' => 'required',
-        ]);
-
         $data = $request->all();
-
-        if ($image = $request->file('photo')) {
-            $pathImg = 'public/photo/';
-            $productImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($pathImg, $productImage);
-            $data['photo'] = "$productImage";
-        }else{
-            unset($data['photo']);
-        }
 
         $product->update($data);
 

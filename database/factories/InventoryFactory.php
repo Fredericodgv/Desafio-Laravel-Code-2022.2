@@ -17,7 +17,7 @@ class InventoryFactory extends Factory
     public function definition()
     {
         return [
-            'product_id' => $this->faker->numberBetween(1, 10),
+            'product_id' => $this->faker->numberBetween(1, 5),
             'quantity' => $this->faker->numberBetween(10, 500),
             'date' => $this->faker->date(),
         ];

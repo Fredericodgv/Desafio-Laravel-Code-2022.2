@@ -16,9 +16,10 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $randomSweet = rand(0, 4);
         return [
-            'name' => ['Beijinho', 'Chocobom', 'Bala de Coco', 'Bala de Goma', 'Bala de Leite', 'Bala de Morango', 'Bala de Pimenta', 'Bala de Tamarindo', 'Bala de Uva', 'Bala de Vinho'][rand(0, 9)],
-            'flavor' => $this->faker->word(),
+            'name' => ['Beijinho', 'Chocobom', 'Brigadeiro', 'Cajuzinho', 'Casadinho'][$randomSweet],
+            'flavor' => ['Coco', 'Chocolate', 'Chocolate', 'chocolate com amendoim', 'Goiabada'][$randomSweet],
             'description' => $this->faker->sentence(),
             'price' => $this->faker->randomFloat(2, 1, 5),
             'photo' => $this->faker->imageUrl(),
