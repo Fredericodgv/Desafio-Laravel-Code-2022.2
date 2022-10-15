@@ -45,7 +45,9 @@
                                         alt="{{ $product->name }}">
                             </div>
                             @endif
+
                         </center>
+
                     </form>
 
                     @if ($enable == '')
@@ -54,6 +56,7 @@
                                 Salvar Produto
                             </button>
                         </div>
+
                     @else
                         <div class="mt-4 d-flex justify-content-center">
                             <a href="{{ route('products.index') }}" class="btn ">
@@ -64,6 +67,7 @@
                             </a>
                         </div>
                     @endif
+                    
                 </div>
             </div>
         </div>
